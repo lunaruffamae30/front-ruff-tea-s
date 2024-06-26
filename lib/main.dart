@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sample/Home.dart';
+import 'package:sample/pages/Dashboard.dart';
+import 'package:sample/pages/menu.dart';
 
 void main() => runApp(MaterialApp(
-  home: Home(),
+  routes:{
+    '/':(context) => Dashboard(),
+    '/menu':(context) => Menu(),
+    '/profile':(context)=>Home(),
+
+  },
 ));
