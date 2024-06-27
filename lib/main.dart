@@ -4,6 +4,7 @@ import 'package:sample/pages/Dashboard.dart';
 import 'package:sample/pages/menu.dart';
 
 void main() => runApp(MaterialApp(
+  initialRoute:'/menu',
   routes:{
     '/':(context) => Dashboard(),
     '/menu':(context) => Menu(),
