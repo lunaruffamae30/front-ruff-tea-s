@@ -25,12 +25,13 @@ class _MenuState extends State<Menu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.black,
         title: Text(
           'Menu',
           style: TextStyle(
             fontWeight: FontWeight.w600,
             letterSpacing: 2.0,
+            color: Colors.white,
           ),
         ),
         centerTitle:true,

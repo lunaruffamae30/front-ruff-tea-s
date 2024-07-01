@@ -11,7 +11,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepOrangeAccent[100],
+      backgroundColor: Colors.black12,
       body: Container(
         child: SafeArea(
           child: Column(

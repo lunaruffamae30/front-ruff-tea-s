@@ -2,5 +2,5 @@ class Product{
   String productName;
   double price;
 
-  Product({this.productName, required this.price});
+  Product({required this.productName, required this.price});
 }
