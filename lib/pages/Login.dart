@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Signup extends StatefulWidget {
-  const Signup({super.key});
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   @override
-  State<Signup> createState() => _SignupState();
+  State<Login> createState() => _LoginState();
 }
 
-class _SignupState extends State<Signup> {
+class _LoginState extends State<Login> {
   final formKey = GlobalKey <FormState>();
-  String name = '';
-  String email = '';
+  String username = '';
   String password ='';
   @override
   Widget build(BuildContext context) {
@@ -25,10 +24,10 @@ class _SignupState extends State<Signup> {
               Text(
                 'Lets Get Started!',
                 style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 2.0,
-                  fontSize: 24.5,
-                  color: Colors.white
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 2.0,
+                    fontSize: 24.5,
+                    color: Colors.white
                 ),
               ),
               SizedBox(height: 30.0,),
@@ -41,62 +40,40 @@ class _SignupState extends State<Signup> {
                       style: TextStyle(color: Colors.white),
                       maxLength: 40,
                       decoration: InputDecoration(
-                        label: Text(
-                            'Name',
-                            style:TextStyle(color: Colors.white),
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20.0)
-                        )
-                      ),
-                      validator: (value){
-                        if(value == null|| value.isEmpty){
-                          return 'Provide Name';
-                        }
-                        if(value.length <2){
-                          return 'Name should be atleast 3 letters long';
-                        }
-                        return null;
-                      },
-                      onSaved: (value){
-                        name = value!;
-                      },
-                    ),
-                    SizedBox(height: 20.0,),
-                    TextFormField(
-                      style: TextStyle(color: Colors.white),
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
                           label: Text(
-                              'Email',
+                            'Username',
                             style:TextStyle(color: Colors.white),
                           ),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20.0)
-                          ),
+                          )
                       ),
                       validator: (value){
-                        if (value == null || value.isEmpty){
-                          return 'Provide an email';
+                        if(value == null|| value.isEmpty){
+                          return 'Provide username';
+                        }
+                        if(value.length <2){
+                          return 'Username should be atleast 3 letters long';
                         }
                         return null;
                       },
                       onSaved: (value){
-                        email = value!;
+                        username = value!;
                       },
                     ),
+
                     SizedBox(height: 20.0,),
                     TextFormField(
                       style: TextStyle(color: Colors.white),
                       obscureText: true,
                       decoration: InputDecoration(
-                          label: Text(
-                              'Password',
-                              style:TextStyle(color: Colors.white),
-                          ),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20.0)
-                          ),
+                        label: Text(
+                          'Password',
+                          style:TextStyle(color: Colors.white),
+                        ),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0)
+                        ),
                       ),
                       validator: (value){
                         if(value==null|| value.isEmpty){
@@ -116,26 +93,69 @@ class _SignupState extends State<Signup> {
                     ),
                     SizedBox(height: 25.0,),
                     ElevatedButton(
-                        onPressed: (){
-                         if ( formKey.currentState!.validate()){
-                           formKey.currentState!.save();
-                           print(name);
-                           print(email);
-                           print(password);
-                         }
-                        },
-                        child: Text('Sign Up'),
-                        style: ElevatedButton.styleFrom(
+                      onPressed: (){
+                        if ( formKey.currentState!.validate()){
+                          formKey.currentState!.save();
+                          print(username);
+                          print(password);
+                        }
+                      },
+                      child: Text('Login'),
+                      style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.grey[400],
                           foregroundColor: Colors.black
-                        ),
+                      ),
+                    ),
+                    SizedBox(height: 25.0,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                      Text(
+                      'or Login with',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    ],
+                    ),
+                    SizedBox(height: 25.0,),
+                    ElevatedButton(
+                      onPressed: (){},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.g_mobiledata),
+                          SizedBox(width: 10.0,),
+                          Text('Google'),
+                        ],
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red[700],
+                          foregroundColor: Colors.black
+                      ),
+                    ),
+                    SizedBox(height: 25.0,),
+                    ElevatedButton(
+                      onPressed: (){},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.facebook,),
+                          SizedBox(width: 10.0,),
+                          Text('Facebook'),
+                        ],
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue[800],
+                          foregroundColor: Colors.black
+                      ),
                     ),
                     SizedBox(height: 40.0,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          'Already have an account?',
+                          'Dont have an account?',
                           style: TextStyle(
                             color: Colors.white,
                           ),
@@ -143,13 +163,13 @@ class _SignupState extends State<Signup> {
                         SizedBox(width: 5.0,),
                         InkWell(
                           child: Text(
-                            'Login Here',
+                            'Signup Here',
                             style: TextStyle(
                               color: Colors.limeAccent,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          onTap: ()=> Navigator.pushReplacementNamed(context,'/login'),
+                          onTap: ()=> Navigator.pushReplacementNamed(context,'/signup'),
                         )
                       ],
                     )
