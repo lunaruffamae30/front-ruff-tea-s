@@ -15,6 +15,7 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.black,
       body: SafeArea(
         child: Padding(
@@ -129,6 +130,50 @@ class _SignupState extends State<Signup> {
                           backgroundColor: Colors.grey[400],
                           foregroundColor: Colors.black
                         ),
+                    ),
+                    SizedBox(height: 25.0,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'or Signup with',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 25.0,),
+                    ElevatedButton(
+                      onPressed: (){},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.g_mobiledata),
+                          SizedBox(width: 10.0,),
+                          Text('Google'),
+                        ],
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red,
+                          foregroundColor: Colors.black
+                      ),
+                    ),
+                    SizedBox(height: 25.0,),
+                    ElevatedButton(
+                      onPressed: (){},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.facebook,),
+                          SizedBox(width: 10.0,),
+                          Text('Facebook'),
+                        ],
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                          foregroundColor: Colors.black
+                      ),
                     ),
                     SizedBox(height: 40.0,),
                     Row(

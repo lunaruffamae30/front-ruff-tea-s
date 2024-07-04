@@ -14,7 +14,13 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar:AppBar(
-        title:Text('User Profile'),
+        title:Text(
+            'User Profile',
+          style: TextStyle(
+          letterSpacing: 2.0,
+          fontWeight: FontWeight.bold,
+        ),
+        ),
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
@@ -28,7 +34,7 @@ class _HomeState extends State<Home> {
               children: <Widget>[
                 Center(
                   child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/woman.png'),
+                    backgroundImage: AssetImage('assets/profile.jpg'),
                     radius: 70.0,
                   ),
                 ),

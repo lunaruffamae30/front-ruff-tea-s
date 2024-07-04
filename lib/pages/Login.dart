@@ -14,11 +14,13 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.black,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.fromLTRB(15.0, 50.0, 10.0, 0),
           child: Column(
+
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
@@ -98,6 +100,7 @@ class _LoginState extends State<Login> {
                           formKey.currentState!.save();
                           print(username);
                           print(password);
+                          Navigator.pushReplacementNamed(context, '/');
                         }
                       },
                       child: Text('Login'),
@@ -130,7 +133,7 @@ class _LoginState extends State<Login> {
                         ],
                       ),
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red[700],
+                          backgroundColor: Colors.red,
                           foregroundColor: Colors.black
                       ),
                     ),
@@ -146,7 +149,7 @@ class _LoginState extends State<Login> {
                         ],
                       ),
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue[800],
+                          backgroundColor: Colors.blue,
                           foregroundColor: Colors.black
                       ),
                     ),
