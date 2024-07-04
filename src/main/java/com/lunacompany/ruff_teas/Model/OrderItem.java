@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 
 public class OrderItem {
 
-    private @Id
+    private @Id 
     @GeneratedValue Long id;
         private  Long orderId;
         private Long productId;

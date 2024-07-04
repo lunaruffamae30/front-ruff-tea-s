@@ -48,7 +48,7 @@ public class OrderController {
    @DeleteMapping ("Order/delete/{id}")
    public String deleteOrder(@PathVariable Long id){
      repo.deleteById(id);
-     return "An Order is deleted!";
+     return " Your Order is been deleted!";
    }
 }
 
