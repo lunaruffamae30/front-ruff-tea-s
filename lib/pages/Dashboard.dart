@@ -13,14 +13,16 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(
-          'Dashboard',
-          style: TextStyle(
-            letterSpacing: 2.0,
-            fontWeight: FontWeight.bold,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 5.0),
+          child: Image.asset(
+            'assets/ruffteas.jpg',
+            height: 60.0,
+            width: 500.0,
+
+
           ),
         ),
-        centerTitle: true,
       ),
       backgroundColor: Colors.black12,
       body: Container(

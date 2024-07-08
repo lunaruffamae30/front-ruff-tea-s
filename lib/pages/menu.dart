@@ -5,6 +5,7 @@ import 'package:sample/Services/product.dart';
 import 'package:sample/Services/menuCard.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:sample/pages/SelectedProduct.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -58,7 +59,6 @@ class _MenuState extends State<Menu> {
                 child: SpinKitFadingCircle(
                   color: Colors.white,
                   size: 80.0,
-                  duration: Duration(seconds:10),
                 ),
               );
             }
@@ -84,7 +84,15 @@ class _MenuState extends State<Menu> {
                               )
                             ],
                           ),
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      Selectedproduct(product: products[index]),
+                              )
+                            );
+                          },
                         ),
                       );
                     },

@@ -23,16 +23,15 @@ class _LoginState extends State<Login> {
 
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(
-                'Lets Get Started!',
-                style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 2.0,
-                    fontSize: 24.5,
-                    color: Colors.white
+              Padding(
+                padding:  const EdgeInsets.only(bottom: 1.0),
+                child: Image.asset(
+                  'assets/LOGO.jpg',
+                  width: 500.0,
+                  height: 250.0,
                 ),
               ),
-              SizedBox(height: 30.0,),
+              SizedBox(height: 1.0,),
               Form(
                 key: formKey,
                 child: Column(
@@ -64,7 +63,7 @@ class _LoginState extends State<Login> {
                       },
                     ),
 
-                    SizedBox(height: 20.0,),
+                    SizedBox(height: 10.0,),
                     TextFormField(
                       style: TextStyle(color: Colors.white),
                       obscureText: true,
@@ -93,7 +92,7 @@ class _LoginState extends State<Login> {
                         password = value!;
                       },
                     ),
-                    SizedBox(height: 25.0,),
+                    SizedBox(height: 20.0,),
                     ElevatedButton(
                       onPressed: (){
                         if ( formKey.currentState!.validate()){
@@ -121,7 +120,7 @@ class _LoginState extends State<Login> {
                     ),
                     ],
                     ),
-                    SizedBox(height: 25.0,),
+                    SizedBox(height: 15.0,),
                     ElevatedButton(
                       onPressed: (){},
                       child: Row(
@@ -137,7 +136,7 @@ class _LoginState extends State<Login> {
                           foregroundColor: Colors.black
                       ),
                     ),
-                    SizedBox(height: 25.0,),
+                    SizedBox(height: 15.0,),
                     ElevatedButton(
                       onPressed: (){},
                       child: Row(
