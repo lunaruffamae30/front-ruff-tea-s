@@ -3,7 +3,6 @@ package com.lunacompany.ruff_teas.Controllers;
 import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Role;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lunacompany.ruff_teas.DTO.RegistrationRequest;
+import com.lunacompany.ruff_teas.Model.Role;
 import com.lunacompany.ruff_teas.Model.UserAuth;
 import com.lunacompany.ruff_teas.Repository.RoleRepository;
 import com.lunacompany.ruff_teas.Repository.UserAuthRepository;
@@ -46,7 +46,7 @@ public class UserAuthController {
             return new ResponseEntity<>("An account is already registered in this email!", HttpStatus.BAD_REQUEST);
         }
 
-        UserAuth user = new UserAuth(
+        UserAuth user= new UserAuth(
             registrationRequest.getUsername(),
             registrationRequest.getEmail(),
             passwordEncoder.encode(registrationRequest.getPassword())

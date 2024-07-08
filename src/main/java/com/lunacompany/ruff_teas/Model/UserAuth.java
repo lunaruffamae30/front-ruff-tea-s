@@ -2,7 +2,6 @@ package com.lunacompany.ruff_teas.Model;
 
 import java.util.Set;
 
-import org.hibernate.annotations.ManyToAny;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -37,6 +36,16 @@ public class UserAuth {
     private Set<Role> roles;
 
     UserAuth(){}
+
+    
+
+    public UserAuth(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+
 
     //getters
     public Long getId() {
