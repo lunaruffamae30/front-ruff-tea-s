@@ -1,7 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:sample/Services/User.dart';
+import 'package:http/http.dart' as http;
+
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
+
 
   @override
   State<Signup> createState() => _SignupState();
@@ -12,6 +18,21 @@ class _SignupState extends State<Signup> {
   String name = '';
   String email = '';
   String password ='';
+
+  createAccount(User user) async{
+    final response = await http.post(
+      Uri.parse('http://10.0.2.2:8080/api/v1/auth/register/user'),
+      headers : <String, String>{
+        'Content-Type' : 'application/json; charter=UTF-8'
+      },
+      body: jsonEncode(<String, dynamic>{
+        'username' : user.username,
+        'email' : user.email,
+        'password' : user.password
+      }),
+    );
+    print(response.body);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,9 +140,12 @@ class _SignupState extends State<Signup> {
                         onPressed: (){
                          if ( formKey.currentState!.validate()){
                            formKey.currentState!.save();
-                           print(name);
-                           print(email);
-                           print(password);
+                           User user = User(
+                           username:name,
+                           email:email,
+                           password:password
+                           );
+                           createAccount(user);
                          }
                         },
                         child: Text('Sign Up'),
