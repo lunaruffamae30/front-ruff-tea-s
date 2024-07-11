@@ -21,126 +21,143 @@ class _HomeState extends State<Home> {
           fontWeight: FontWeight.bold,
         ),
         ),
-        backgroundColor: Colors.white,
+        actions: [
+
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: (){
+              Navigator.pushReplacementNamed(context, '/login');
+            },
+          ),
+        ],
+        backgroundColor: Colors.red[100],
         centerTitle: true,
       ),
-      body:Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Center(
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/profile.jpg'),
-                    radius: 70.0,
-                  ),
-                ),
-                Divider(
-                  height: 30.0,
-                  color: Colors.white,
-                  thickness: 3.0,
-                ),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.person_2,
-                      color: Colors.white,
+      body:Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/bg2.jpg'),
+                fit: BoxFit.cover
+            )
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Center(
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage('assets/profile.jpg'),
+                      radius: 70.0,
                     ),
-                    SizedBox(width:3.0,),
-                    Text(
-                      'NAME',
-                      style: TextStyle(
-                          fontSize: 16.0,
-                          color:Colors.white,
-                          letterSpacing:2.0,
+                  ),
+                  Divider(
+                    height: 30.0,
+                    color: Colors.black,
+                    thickness: 3.0,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.person_2,
+                        color: Colors.black,
                       ),
+                      SizedBox(width:3.0,),
+                      Text(
+                        'NAME',
+                        style: TextStyle(
+                            fontSize: 16.0,
+                            color:Colors.black,
+                            letterSpacing:2.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Text(
+                    'RUFFA MAE V. LUNA',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color:Colors.black,
+                        fontSize: 25.0
                     ),
+                  ),
+                  SizedBox(height: 30.0,),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.calendar_month_sharp,
+                        color: Colors.black,
+                      ),
+                      SizedBox(width:3.0,),
+                  Text(
+                    'YEAR',
+                    style: TextStyle(
+                        fontSize: 16.0,
+                        color:Colors.black,
+                        letterSpacing:2.0
+                    ),
+                  ),
                   ],
-                ),
-                Text(
-                  'RUFFA MAE V. LUNA',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color:Colors.white,
-                      fontSize: 25.0
                   ),
-                ),
-                SizedBox(height: 30.0,),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.calendar_month_sharp,
-                      color: Colors.white,
+                  Text(
+                    '$year YEAR',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color:Colors.black,
+                        fontSize: 25.0
                     ),
-                    SizedBox(width:3.0,),
-                Text(
-                  'YEAR',
-                  style: TextStyle(
-                      fontSize: 16.0,
-                      color:Colors.white,
-                      letterSpacing:2.0
                   ),
-                ),
-                ],
-                ),
-                Text(
-                  '$year YEAR',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color:Colors.white,
-                      fontSize: 25.0
-                  ),
-                ),
 
-                SizedBox(height: 30.0,),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.email_sharp,
-                      color: Colors.white,
+                  SizedBox(height: 30.0,),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.email_sharp,
+                        color: Colors.black,
+                      ),
+                  SizedBox(height: 30.0,),
+                  Text(
+                    'EMAIL',
+                    style: TextStyle(
+                        fontSize: 16.0,
+                        color:Colors.black,
+                        letterSpacing:2.0
                     ),
-                SizedBox(height: 30.0,),
-                Text(
-                  'EMAIL',
-                  style: TextStyle(
-                      fontSize: 16.0,
-                      color:Colors.white,
-                      letterSpacing:2.0
                   ),
-                ),
+                  ],
+                  ),
+                  Text(
+                    'ruffamaeluna323@gmail.com',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color:Colors.black,
+                        fontSize: 25.0
+                    ),
+                  )
                 ],
-                ),
-                Text(
-                  'ruffamaeluna323@gmail.com',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color:Colors.white,
-                      fontSize: 25.0
-                  ),
-                )
-              ],
-            ),
+              ),
 
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                ElevatedButton(
-                  onPressed: (){
-                    setState(() {
-                      year += 1;
-                    });
-                  },
-                  child: Text( 'Add Year'),
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(Colors.white)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  ElevatedButton(
+                    onPressed: (){
+                      setState(() {
+                        year += 1;
+                      });
+                    },
+                    child: Text( 'ADD YEAR', style: TextStyle(color: Colors.black) ),
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all(Colors.grey[300])
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

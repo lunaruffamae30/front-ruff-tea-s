@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sample/Services/product.dart';
 
-class Menucard extends StatelessWidget {
+class menuCard extends StatelessWidget {
  final Product product;
 
- Menucard({required this.product});
+ menuCard({required this.product});
 
   @override
   Widget build(BuildContext context) {
